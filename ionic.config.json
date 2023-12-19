@@ -1,0 +1,7 @@
+{
+  "name": "ionicJenkins",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
