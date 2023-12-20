@@ -15,13 +15,13 @@ pipeline {
 
    stage('IOS Build') {
    steps {
-      sh 'ionic capacitor build ios --release'
+      sh 'npx ionic capacitor build ios --release'
      } 
   }
 
    stage('Android Build') {
    steps {
-      sh 'ionic capacitor build android --release'
+      sh 'npx ionic capacitor build android --release'
    }
   }
 
