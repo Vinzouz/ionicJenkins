@@ -21,7 +21,7 @@ pipeline {
 
    stage('Android Build') {
    steps {
-      sh 'npx ionic capacitor build android --release'
+      sh 'npx ionic capacitor copy android --prod && cd android && ./gradlew assembleRelease && cd ..'
    }
   }
 
