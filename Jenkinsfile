@@ -3,6 +3,9 @@ pipeline {
       environment {
          PATH='/usr/local/bin:/usr/bin:/bin'
       }
+   tools {
+      nodejs '18.18.2'
+   }
    stages {
       stage('NPM Setup') {
       steps {
