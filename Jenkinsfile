@@ -13,11 +13,11 @@ pipeline {
       }
    }
 
-   stage('IOS Build') {
-   steps {
-      sh 'npx ionic capacitor copy ios --prod && cd ios/App && xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -archivePath ./build/App.xcarchive archive'
-     } 
-  }
+//    stage('IOS Build') {
+//    steps {
+//       sh 'npx ionic capacitor build ios --release'
+//      } 
+//   }
 
    stage('Android Build') {
    steps {
@@ -27,7 +27,7 @@ pipeline {
 
    stage('APK Sign') {
    steps {
-      sh 'jarsigner -storepass your_password -keystore keys/yourkey.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
+      sh 'C:/Program Files/Java/jdk-17/bin/jarsigner -storepass JVTcorp80++ -keystore my-release-key.keystore android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
    }
    }
 
