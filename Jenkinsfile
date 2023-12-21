@@ -31,6 +31,16 @@ pipeline {
     }
    }
 
+   stage('APK Align and Verify') {
+    steps {
+        sh '''
+        C:/Users/Vincent/AppData/Local/Android/Sdk/build-tools/31.0.0/zipalign -v 4 android/app/build/outputs/apk/release/app-release-unsigned.apk android/app/build/outputs/apk/release/app-release.apk
+        C:/Users/Vincent/AppData/Local/Android/Sdk/build-tools/31.0.0/apksigner verify android/app/build/outputs/apk/release/app-release.apk
+        '''
+    }
+}
+
+
    stage('Stage Web Build') {
       steps {
         sh 'npm run build --prod'
