@@ -27,9 +27,7 @@ pipeline {
 
    stage('APK Sign') {
     steps {
-        withCredentials([string(credentialsId: 'keystorePassword', variable: 'KEYSTORE_PASSWORD')]) {
-            sh 'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass $KEYSTORE_PASSWORD android/app/build/outputs/apk/release/app-release-unsigned.apk myAppName'
-        }
+      sh 'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass 123456 android/app/build/outputs/apk/release/app-release-unsigned.apk myAppName'
     }
    }
 
