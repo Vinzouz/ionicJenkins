@@ -27,7 +27,7 @@ pipeline {
 
    stage('APK Sign') {
    steps {
-      sh 'C:/Program Files/Java/jdk-17/bin/jarsigner -storepass JVTcorp80++ -keystore my-release-key.keystore android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
+      sh 'C:/Program Files/Java/jdk-17/bin/jarsigner -storepass  -keystore my-release-key.keystore android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
    }
    }
 
