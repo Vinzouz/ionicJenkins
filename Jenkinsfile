@@ -2,6 +2,7 @@ pipeline {
    agent any
       environment {
          PATH='/usr/local/bin:/usr/bin:/bin'
+         JDK_PATH='C:/Program Files/Java/jdk-17/bin/'
       }
    tools {
       nodejs '18.18.2'
@@ -27,7 +28,7 @@ pipeline {
 
    stage('APK Sign') {
     steps {
-      sh 'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass 123456 android/app/build/outputs/apk/release/app-release-unsigned.apk myAppName'
+      sh '${env.JAVA_HOME}/bin/jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass 123456 android/app/build/outputs/apk/release/app-release-unsigned.apk myAppName'
     }
    }
 
