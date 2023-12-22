@@ -46,7 +46,7 @@ pipeline {
             sh '''
             C:/Users/Vincent/AppData/Local/Android/Sdk/build-tools/33.0.0/zipalign -v 4 android/app/build/outputs/apk/release/app-release-unsigned.apk android/app/build/outputs/apk/release/app-aligned.apk
             C:/Users/Vincent/AppData/Local/Android/Sdk/build-tools/33.0.0/apksigner.bat sign --ks my-release-key.keystore --ks-key-alias my_key_alias --ks-pass pass:123456 --key-pass pass:123456 --out android/app/build/outputs/apk/release/app-signed.apk android/app/build/outputs/apk/release/app-aligned.apk
-            C:/Users/Vincent/AppData/Local/Android/Sdk/build-tools/33.0.0/apksigner.bat verify android/app/build/outputs/apk/release/app-release.apk
+            C:/Users/Vincent/AppData/Local/Android/Sdk/build-tools/33.0.0/apksigner.bat verify android/app/build/outputs/apk/release/app-signed.apk
             '''
         }
     }
